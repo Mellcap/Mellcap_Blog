@@ -25,6 +25,15 @@ tags:
 
 这样就可以通过dict的`get(value)`来拿到对应的字段定义了。
 
+**需要注意的是：**  
+
+gender如果不是定义在res.medical.doctor中，比如是继承的，会导致报错。  
+
+所以要提前判断一下  
+
+	if req.env['res.medical.doctor']._columns.get('gender')
+
+
 # 扩展
 
 ## dict通过value拿到key  
