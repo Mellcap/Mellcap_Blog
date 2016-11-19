@@ -5,7 +5,7 @@
 # Site
 title: Mellcap
 subtitle:
-description:
+description: To die alive.
 author: Mellcap
 language: zh-Hans
 timezone: Asia/Shanghai
@@ -64,6 +64,17 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
+
+# Avatar
+avatar: /uploads/avatar.jpg
+
+# Search
+# 在根目录执行 $ npm install hexo-generator-searchdb --save
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
