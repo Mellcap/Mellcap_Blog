@@ -39,7 +39,7 @@ tags:
 * 格式化HTML [HTMLBeautify](https://packagecontrol.io/packages/HTMLBeautify)
 
 ## 配置文件
-
+```json
 	{
 		"auto_complete": true,
 		"auto_complete_commit_on_tab": true,
@@ -74,6 +74,6 @@ tags:
 		// 保存时自动去除行末空白
 		"trim_trailing_white_space_on_save": true
 	}
-
+```
 
 

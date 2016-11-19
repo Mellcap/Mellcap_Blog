@@ -10,7 +10,7 @@ tags:
 
 # Python字典通过value找key
 Python默认通过key找value，需要注意的是**value是可以重复的** 。  
- 
-	dict.keys()[dict.values().index(value)]
-  
+```python 
+dict.keys()[dict.values().index(value)]
+```
 通过以上方法就可以通过value拿到key

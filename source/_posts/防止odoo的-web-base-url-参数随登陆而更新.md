@@ -14,12 +14,12 @@ tags:
 例如我以`www.mellcap.com:48369`登陆后台时，`web.base.url`的值会从`http://www.mellcap.com`改为`http://www.mellcap.com:48369`
 
 # 解决方法
-######在`系统参数`中增加`web.base.url.freeze`字段并赋值为`1`(也可以是其他非空参数)就可以解决该问题了。
+###### 在`系统参数`中增加`web.base.url.freeze`字段并赋值为`1`(也可以是其他非空参数)就可以解决该问题了。
 
 ## 原理
 在`odoo/openerp/addons/base/res/res_users.py`中有这样一段函数：
 
-```
+```python
     def authenticate(self, db, login, password, user_agent_env):
         """Verifies and returns the user ID corresponding to the given
           ``login`` and ``password`` combination, or False if there was
@@ -52,7 +52,7 @@ tags:
 
 精华在这里：
 
-```
+```python
 if not ICP.get_param(cr, uid, 'web.base.url.freeze'):
     ICP.set_param(cr, uid, 'web.base.url', base)
 cr.commit()
