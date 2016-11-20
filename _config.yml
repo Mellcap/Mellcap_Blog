@@ -68,7 +68,7 @@ theme: next
 # Avatar
 avatar: /uploads/avatar.jpg
 
-# Search
+# Search Hexo Local
 # 在根目录执行 $ npm install hexo-generator-searchdb --save
 search:
   path: search.xml
