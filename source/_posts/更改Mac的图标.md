@@ -27,6 +27,9 @@ Github上已经有人维护了一套扁平化的图标：[Flat.icns](http://flat
 将下载好的`.icns`的图标拖到原有图标上，替换成功。
 {% asset_img change_icon.jpeg %}
 
+### **系统级的图标更换**
+参照[如何替换 Finder 图标](http://sspai.com/34971)
+
 ## 恢复原来的图标
 
 如果替换的图标不满意，直接`查看简介`后`点击图标`按`Delete`键即可。
