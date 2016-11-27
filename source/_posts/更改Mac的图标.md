@@ -18,6 +18,15 @@ tags:
 Github上已经有人维护了一套扁平化的图标：[Flat.icns](http://flaticns.com/)
 {% asset_img flat_icons.jpeg Flat.icns %}
 
+比较好的Github项目：
+
+[Flat.icns](https://github.com/tinalatif/flat.icns)
+
+[Icons-flat-osx](https://github.com/dr-slash/icons-flat-osx)
+
+[Mac-icns](https://github.com/sulihuang/Mac-icns)
+
+
 ## 更改Mac的图标
 ### 一、选择应用程序
 打开`Finder`中的`应用程序`，选择要更改图标的应用。
