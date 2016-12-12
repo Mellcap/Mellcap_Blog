@@ -17,6 +17,10 @@ tags:
 
 >注：在title、date等所有文件后面一定要加空格,否则会报错。
 
+## 安装
+最近安装Hexo出现DTraceProviderBindings的错误，参考了这位朋友的方法，终于成功，记录一下。
+[MacOs下DTraceProviderBindings错误](http://www.ixirong.com/2016/08/30/solve-hexo-not-found-problem/)
+
 
 
 
