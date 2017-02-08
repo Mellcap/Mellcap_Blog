@@ -18,15 +18,17 @@ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.gi
 ```
 
 2.fetch
+
 ```bash
 git fetch upstream
 ```
 
 3.merge
+
 ```bash
 git checkout master
 git merge upstream/master
 ```
 
-##参考资料：
+## 参考资料：
 [如何同步 Github fork 出来的分支](http://jinlong.github.io/2015/10/12/syncing-a-fork/)
