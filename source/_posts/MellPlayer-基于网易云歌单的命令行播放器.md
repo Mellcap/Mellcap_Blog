@@ -39,8 +39,8 @@ OSX & Linux (Linux未经过测试)
 brew install mpv
 ```
 
-### 升级
-通过 pip3 升级
+### 更新
+通过 pip3 更新
 ```bash
 [sudo] pip3 install MellPlayer --upgrade
 ```
