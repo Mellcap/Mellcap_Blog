@@ -26,6 +26,16 @@ trusted-host =  mirrors.aliyun.com
 index-url = http://mirrors.aliyun.com/pypi/simple
 ```
 
+================
+
+豆瓣源也是非常不错的
+
+```bash
+[global]
+timeout = 60
+index-url = https://pypi.doubanio.com/simple
+```
+
 ## 更新包
 
 pip install -U <Package>

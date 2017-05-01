@@ -19,7 +19,7 @@ update ir_module_module set state='installed' where state='to upgrade';
 odoo更新模块时报错偶尔会引起Server无法启动，解决办法就是在数据库中运行改脚本即可。
 
 ## 例子
-更新模块时XML中写入了Model中未定义的字段"write_datea"，更新模块时报错如图  
+更新模块时XML中写入了Model中未定义的字段"write_date"，更新模块时报错如图  
 ![报错](http://7xqfjn.com1.z0.glb.clouddn.com/2016%3A01%3A24%3Aodoo%E6%9B%B4%E6%96%B0%E6%A8%A1%E5%9D%97%E6%8A%A5%E9%94%991.png)  
 重启时500，无法启动  
 ```bash

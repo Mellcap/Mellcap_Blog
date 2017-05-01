@@ -8,50 +8,61 @@ tags:
 ---
 # MellPlayer
 
-## 前言
+### <a name="Preface_cn"></a>前言
 我写代码时非常喜欢听音乐，最近在歌单中听到了许多入耳惊艳的歌，觉得非常不错。但是歌单的随机播放以及快速切换是个软肋，于是开发了MellPlayer，可以按照分类随机听歌，实现了歌单间的快速切换，希望大家能够喜欢。
 
 {% asset_img mellplayer_tutorial.gif %}
 
-## 开发理念
+### <a name="Develop idea_cn"></a>开发理念
 MellPlayer的初版刚刚发布，还有许许多多需要改进的地方，非常希望能有志同道合的朋友Fork下来，一起打造越来越完美的播放器，下面就说下我的开发理念：
 
 >MellPlayer是一款命令行播放器，主要是为了实现根据心情随机听歌，并且能够快速进行歌单间的切换，简约流畅，我希望在此基础上谨慎添加小而美的功能。并不想引入过多繁琐的功能，添加一大堆的快捷键，将简洁的东西繁琐化是违背我的初衷的。
 
 
-## 关于项目
+### <a name="About Repo_cn"></a>关于项目
 项目地址：[MellPlayer](https://github.com/Mellcap/MellPlayer)
+
 项目基于python3开发，依赖mpv。还有很多地方需要优化改进，大家发现什么问题可以给我提Issue，当然非常欢迎有兴趣的朋友加入，一起打造我们喜欢的播放器。
+
 既然看到这儿了，就来 [Star](https://github.com/Mellcap/MellPlayer) 一下， 互相 [Follow](https://github.com/Mellcap) 一下吧哈哈！！！
 
-### 支持
-OSX & Linux (Linux未经过测试)
+#### <a name="Support_cn"></a>支持
+OSX & Linux (Linux 仍有些bug待修复)
 
-### 安装
+### <a name="Installation_cn"></a>安装
 通过 [pip3](https://pip.pypa.io/en/stable/) 安装
 ```bash
 [sudo] pip3 install MellPlayer
 ```
 
-### Mac OSX 安装依赖
+#### <a name="Additional Mac OSX Installation notes_cn"></a>Mac OSX 安装依赖
 通过 [Homebrew](https://brew.sh/) 安装 mpv
 ```bash
 brew install mpv
 ```
 
-### 更新
+#### <a name="Additional Ubuntu Installation notes_cn"></a>Ubuntu 安装依赖
+通过 apt-get 安装 mpv (Ubuntu16.04已经过测试)
+```bash
+sudo apt-get install libmpv-dev mpv
+```
+
+#### <a name="Upgrading_cn"></a>更新
 通过 pip3 更新
 ```bash
 [sudo] pip3 install MellPlayer --upgrade
 ```
 
-### 使用
+### <a name="Usage_cn"></a>使用
 在命令行直接输入mellplayer即可享受：
 ```bash
 mellplayer
 ```
 
-### 快捷键
+### <a name="About Country Restriction_cn"></a>关于地区限制
+因为歌曲 API 只接受中国大陆地区访问，港澳台及海外用户请自行设置代理。
+
+#### <a name="Keys_cn"></a>快捷键
 ```
 
  操作
