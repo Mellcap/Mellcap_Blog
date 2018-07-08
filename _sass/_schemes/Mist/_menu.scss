@@ -3,6 +3,12 @@
 .site-nav-toggle {
   position: static;
   float: right;
+
+  button {
+    .btn-bar {
+      background: $mell-brand;
+    }
+  }
 }
 
 
@@ -34,6 +40,11 @@
     }
 
     &:hover { background: #e1e1e1; }
+  }
+
+  a {
+    color: $mell-brand;
+    font-weight: lighter;
   }
 
   a::before {

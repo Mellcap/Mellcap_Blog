@@ -1,6 +1,6 @@
 // Header
 // --------------------------------------------------
-.header { background: $whitesmoke; }
+.header { background: $mell-bg; }
 .header-inner {
   padding: 25px 0 20px;
   @include clearfix();
@@ -31,8 +31,8 @@
   .logo { display: none; }
 
   .site-title {
-    font-size: 22px;
-    font-weight: bolder;
+    font-size: 26px;
+    font-weight: lighter;
 
     @include mobile() { line-height: 34px; }
   }
@@ -41,10 +41,11 @@
 
 .logo-line-before,
 .logo-line-after {
-  display: block;
+  display: none;
   overflow: hidden;
   margin: 0 auto;
   width: 100%;
+  color: $mell-brand;
 
   @include mobile() { display: none; }
 
