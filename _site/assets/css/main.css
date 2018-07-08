@@ -482,7 +482,7 @@ pre .k, pre .kd, pre .kn, pre .kp, pre .kr, pre .kt, pre .javascript .function {
 @media (max-width: 767px) { .posts-expand .post-comments-count { display: none; } }
 
 .post-button { margin-top: 50px; }
-.post-button .btn { color: #555; font-size: 14px; background: transparent; border-radius: 0; line-height: 2; margin: 0 4px 8px 4px; }
+.post-button .btn { color: #555; font-size: 12px; background: transparent; border-radius: 0; line-height: 2; margin: 0 4px 8px 4px; }
 .post-button .fa-fw { width: 1.2857142857em; text-align: left; }
 
 .posts-expand .post-tags { margin-top: 40px; text-align: center; }
@@ -558,7 +558,7 @@ pre .k, pre .kd, pre .kn, pre .kp, pre .kr, pre .kt, pre .javascript .function {
 .links-of-author { margin-top: 20px; }
 
 .links-of-author a { display: inline-block; vertical-align: middle; margin-right: 10px; margin-bottom: 10px; border-bottom-color: #555; font-size: 13px; }
-.links-of-author a:before { display: inline-block; vertical-align: middle; margin-right: 3px; content: " "; width: 4px; height: 4px; border-radius: 50%; background: #ff9c00; }
+.links-of-author a:before { display: inline-block; vertical-align: middle; margin-right: 3px; content: " "; width: 4px; height: 4px; border-radius: 50%; background: #00e300; }
 
 .links-of-blogroll { font-size: 13px; }
 

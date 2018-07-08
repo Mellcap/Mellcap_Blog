@@ -76,7 +76,7 @@ plugins:
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `assets/` directory.
-favicon: /assets/favicon.ico
+favicon: /assets/images/favicon.ico
 
 # Set default keywords (Use a comma to separate)
 keywords: "Mellcap, Blog"
@@ -90,7 +90,7 @@ rss:
 since: 2018
 
 # icon between year and author @Footer
-authoricon: heartbeat
+authoricon: rocket
 
 # Footer `powered-by` and `theme-info` copyright
 copyright: true
@@ -136,10 +136,10 @@ menu_icons:
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
   home: home
   about: user
-  categories: th
+  categories: th-large
   schedule: calendar
-  tags: tags
-  archives: archive
+  tags: tag
+  archives: list-ul
   sitemap: sitemap
   commonweal: heartbeat
 
