@@ -5,7 +5,7 @@
 
 # Site
 title: Mellcap
-subtitle: Mellcap的个人博客
+subtitle: to die alive.
 description: to die alive.
 author: Mellcap
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
@@ -136,7 +136,7 @@ menu_icons:
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
   home: home
   about: user
-  categories: th-large
+  categories: th
   schedule: calendar
   tags: tag
   archives: list-ul
@@ -151,8 +151,8 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-# scheme: Muse
-scheme: Mist
+scheme: Muse
+#scheme: Mist
 # scheme: Pisces
 
 
