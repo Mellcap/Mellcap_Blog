@@ -9,7 +9,7 @@ subtitle: to die alive.
 description: to die alive.
 author: Mellcap
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
-language: zh-Hans
+language: en
 date_format: '%Y-%m-%d'
 
 # URL
@@ -138,7 +138,7 @@ menu_icons:
   about: user
   categories: th
   schedule: calendar
-  tags: tag
+  tags: tags
   archives: list-ul
   sitemap: sitemap
   commonweal: heartbeat
