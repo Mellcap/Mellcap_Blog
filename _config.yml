@@ -174,7 +174,7 @@ font:
   global:
     # external: true will load this font family from host.
     external: true
-    family: 
+    family:
 
   # Font settings for Headlines (h1, h2, h3, h4, h5, h6)
   # Fallback to `global` font settings.
@@ -663,7 +663,7 @@ vendors:
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome: //maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css
+  fontawesome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css
 
   # Internal version: 1
   # https://www.algolia.com
