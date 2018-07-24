@@ -38,9 +38,55 @@ public class HelloWorld {
 Example:
 
 ```bash
-$ javac HelloWorld.java  #Compiler
-$ java HelloWorld  #Interpreter, do not inclue '.class'
+$ javac HelloWorld.java  # Compiler
+$ java HelloWorld  # Interpreter, do not inclue '.class'
 Hello World!
 ```
+
+### Variables and Loops
+
+```java
+public class HelloNumbers {
+    public static void main(String[] args) {
+        int x = 0;
+        while (x < 10) {
+            System.out.println(x);
+            x = x + 1;
+        }
+    }
+}
+```
+
+#### Some interesting features
+
+* Our variable **x** must be declared **before** it is used, and it must be **given a type**!
+* Our loop definition is contained inside of curly braces, and the boolean expression that is tested is contained inside of parentheses.
+
+
+### Static Typing
+
+One of the most important features of Java is that all variables and expressions have a so called `static type`. Java variables can contain values fo that type, and only that type. Furthermore, the type of a variable can never change.
+
+One of the key features of the Java compiler is that it performs a static type check, it rejects the program with wrong type before it even runs. This is in contrast to dynamically typed languages like Python, where users can run into type errors during execution.
+
+To summarize, static typing has the following advantages:
+
+* The compiler ensures that all types are compatible, making it easier for the programmer to debug their code.
+* Since the code is guaranteed to be free of type errors, users of your compiled programs will never run into type errors.
+* Every variable, parameter, and function has a declared type, making it easier for a programmer to understand and reason about code.
+
+#### Extra Thought
+
+In Java, we can say `System.out.println(5 + "horse");`. But in Python, we can't say `print(5 + "horse")`. Why is that so?
+
+Consider these two Java statements:
+
+`String h = 5 + "horse";`
+
+`Int h = 5 + "horse";`
+
+The first one of these will succeed; the second will give a compiler error. Since Java is strongly typed, if you tell it `h` is a `string`, it can concatenate the elements and give you a string.
+
+Python doesn't constrain the type, and it can't make an assumption for what type you want. Is `s = 5 + "horse"` supposed to be a number? A string? Python doesn't know, so it errors.
 
 
