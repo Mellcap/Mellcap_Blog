@@ -89,4 +89,41 @@ The first one of these will succeed; the second will give a compiler error. Sinc
 
 Python doesn't constrain the type, and it can't make an assumption for what type you want. Is `s = 5 + "horse"` supposed to be a number? A string? Python doesn't know, so it errors.
 
+### Defining Functions in Java
+
+Since all Java code is part of a class, we must define functions so that they belong to some class. Functions that are part of a class are commonly called "methods", we will use the terms interchageably throughtout the course.
+
+```java
+public class LargerDemo {
+    public static int larger(int x, int y) {
+        if (x > y) {
+            return x;
+        }
+        return y;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(larger(-5, 8));
+    }
+}
+```
+The new piece of syntax here is that we decleared our method using the keywords `public static`, which is a very rough analog of Python's `def` keyword.
+
+### Code Style, Comments, Javadoc
+
+Code can be beautiful in many ways. In this course, we'll work hard to try to keep our code readable. Some of the most important features of good coding style are:
+
+* Descriptive naming (variables, functions, classes), e.g. variables or functions with names like `year` or `getUserName` instead of `x` or `f`.
+* Avoidance of repetitive code: You should almost never have two significant blocks of code that are nearly identical except for a few changes.
+* COmments where appropriate. Line comments in Java use the `//` delimiter. Block (a.k.a. multi-line comments) comments use `/*` and `*/`.
+
+The golden rule is this: Write your code so that it is easy for a stranger to understand.
+
+Often, we are willing to incur slight performance penalties, just so that our code is simpler to [grok](https://en.wikipedia.org/wiki/Grok).
+
+#### Comments
+
+Almost all of your classes should be described in a comment using the so-called [Javadoc](https://en.wikipedia.org/wiki/Javadoc) format.
+
+The widely used [javadoc tool](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html) can be used to generate HTML descriptions of your code.
 
