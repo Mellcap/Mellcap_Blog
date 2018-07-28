@@ -83,7 +83,7 @@ Consider these two Java statements:
 
 `String h = 5 + "horse";`
 
-`Int h = 5 + "horse";`
+`int h = 5 + "horse";`
 
 The first one of these will succeed; the second will give a compiler error. Since Java is strongly typed, if you tell it `h` is a `string`, it can concatenate the elements and give you a string.
 
@@ -213,7 +213,7 @@ Some key observations and terminology:
 * The `Dog` class has its own variables, also known as **instance variables** or **non-static variables**. These must be declared inside the class, unlike languages like Python, where new variables can be added at runtime.
 * The method that we created in the `Dog` class did not have the `static` keyword. We call such methods **instance methods** or **non-static methods**.
 	1. Idea: If the method is going to be invoked by an instance of the class, then it should be non-static. Roughly speaking: If the method need to use **my instance variables**, the method must be non-static.
-* To call the `makeNoise` method, we had first **instantiate** a `Dog` using the `New` keyword, and then make a specific `Dog` bark. In other words, we called `d.makeNoise()` instead of `Dog.makeNoise()`.
+* To call the `makeNoise` method, we had first **instantiate** a `Dog` using the `new` keyword, and then make a specific `Dog` bark. In other words, we called `d.makeNoise()` instead of `Dog.makeNoise()`.
 * Variables and methods of a class are also called **members** of a class, which can accessed using dot notation.
 
 #### Constructors in Java
