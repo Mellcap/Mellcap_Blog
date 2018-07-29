@@ -248,3 +248,78 @@ public DogArrayDemo() {
     }
 }
 ```
+
+### Class Methods vs. Instance Methods
+
+Instance methods are actions that can be taken only by a specific instance of a class.
+
+Static methods are actions that are taken by the class itself.
+
+Both are useful in different circumstances. As an example of a static method, the `Math` class provides a `sqrt` method.
+
+```java
+x = Math.sqrt(100);
+```
+
+If `sqrt` had been an instance method, we would have instead the awkward syntax below.
+
+```java
+Math m = new Math();
+x = m.sqrt(100);
+```
+
+Sometimes, it makes sense to have a class with both instance and static method. For example:
+
+```java
+// static method of maxDog.
+public static Dog maxDog(Dog d1, Dog d2) {
+    if (d1.weightInPounds < d2.weightInPounds) {
+        return d2;
+    }
+    return d1;
+}
+```
+
+This method could be invoked by the class name, sime it is a static method.
+
+```java
+Dog d = new Dog(15);
+Dog d2 = new Dog(100);
+Dog.maxDog(d, d2);
+```
+
+We could also have implemented `maxDog` as a non-static method, e.g.
+
+```java
+// non-static method of maxDog.
+public Dog maxDog(Dog d2) {
+    if (this.weightInPounds < d2.weightInPounds) {
+        return d2;
+    }
+    return this;
+}
+```
+
+Above, we use the keyword `this` to refer to the current object.
+
+```java
+Dog d = new Dog(15);
+Dog d2 = new Dog(100);
+d.maxDog(d2);
+```
+
+Here, we invoke the method using a specific instance variable.
+
+### Static Variables 
+
+It is occasionally useful for classes to have static variables. These are properities inherent to the class itself, rather than the instance. For example, we might record the scientific name (or binomen) for the Dogs is "Canis familiaris":
+
+```java
+public class Dog {
+    public int weightInPounds;
+    public static String binomen = "Canis familiaris";
+    ...
+}
+```
+
+Static variables should be accessed using the name of the class rather than a specific instance, e.g. you should use `Dog.binomen`, not `d.binomen`.
