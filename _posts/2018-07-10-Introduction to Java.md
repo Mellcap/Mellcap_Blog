@@ -323,3 +323,32 @@ public class Dog {
 ```
 
 Static variables should be accessed using the name of the class rather than a specific instance, e.g. you should use `Dog.binomen`, not `d.binomen`.
+
+### public static void main(String[] args) 
+
+* `public`: So far, all of our methods start with this keyword.
+* `static`: It is a static method, not associated with any particular instance.
+* `void`: It has no return type.
+* `main`: Name of the method.
+* `String[] args`: This is a parameter that is passed to the main method.
+
+#### Command Line Arguments
+
+Since `main` is called by the Java interpreter itself rather than another Java class, it is the interpreter's job to supply these arguments. They refer usually to the command line arguments.
+
+```java
+public class ArgsDemo {
+    public static void main(String[] args) {
+        System.out.println(args[0]);
+    }
+}
+```
+
+This program prints out the 0th command line argument, e.g.
+
+```bash
+$ java ArgsDemo these are command line arguments
+these
+```
+
+In the example above, `args` will be an array of Strings, where the entries are {"these", "are", "command", "line", "arguments"}.
