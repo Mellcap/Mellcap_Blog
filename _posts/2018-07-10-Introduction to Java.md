@@ -352,3 +352,6 @@ these
 ```
 
 In the example above, `args` will be an array of Strings, where the entries are {"these", "are", "command", "line", "arguments"}.
+
+### Projects
+[Project 0 - NBody Simulation](https://sp18.datastructur.es/materials/proj/proj0/proj0)
