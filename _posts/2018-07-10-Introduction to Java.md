@@ -7,8 +7,6 @@ tags:
 - Introduction to Java
 ---
 
-# Introduction to Java
-
 ## Essentials
 
 ### Build a simple Java program which prints "Hello World"
