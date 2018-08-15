@@ -308,7 +308,7 @@ excerpt_description: true
 # Please use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
   enable: false
-  length: 100
+  length: 200
 
 # Post meta display settings
 post_meta:
