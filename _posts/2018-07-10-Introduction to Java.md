@@ -26,6 +26,8 @@ public class HelloWorld {
 * We use curly braces `{` and `}` to denote the beginning and the end of a section of code.
 * Statements must end with semi-colons `;`.
 
+<!-- more -->
+
 #### Java syntax reference book
 [A Java Reference](http://www-inst.eecs.berkeley.edu/~cs61b/fa14/book1/java.pdf)
 
