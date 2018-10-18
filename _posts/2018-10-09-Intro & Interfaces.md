@@ -169,3 +169,166 @@ This is because the only distinction between two overloaded methods is the types
 🌟 When you are creating these hierarchies, remember that the relationship between a subclass and a superclass should be an **"is-a"** relationship. You should not be defining them using a "has-a" relationship.
 
 Cat should only implement Animal, Cat **is an** Animal. Cat **has-a** Claw, but Cat definitely should not be implementing Claw.
+
+
+# Extends, Casting & Higher Order Functions
+
+### Extends
+
+We can use `extends` to define a hierarchical relationship between classes.
+
+Define a `RotatingSLList` to extend from `SLList`, and a `rotateRight` method which rotates every element one spot to the right.
+
+```java
+public class RotatingSLList<Item> extends SLList<Item> {
+	public void rotateRight() {
+	    Item x = removeLast();
+	    addFirst(x);
+	}
+}
+```
+
+Noticed that we were able to use methods defined outside of RotatingSLList. By using the `extends` keyword, subclass inherit all **members** of the parent class, include:
+
+* All instance and static variables
+* All methods
+* All nested classes
+
+Except **constructors** and **private members**.
+
+### Super
+
+Create a new class `VengefulSLList` that collects the removed element.
+
+In an effort to *reuse* code, we can **override** the `removeLast` methods, and call the `removeLast` method defined in the parent class uding the `super` keyword.
+
+```java
+public class VengefulSLList<Item> extends SLList<Item> {
+    SLList<Item> deletedItems;
+
+    public VengefulSLList() {
+	    super(); //Java will automatically make a call to the superclass's **no-argument** constructor for us.
+        deletedItems = new SLList<Item>();
+    }
+
+    @Override
+    public Item removeLast() {
+        Item x = super.removeLast();
+        deletedItems.addLast(x);
+        return x;
+    }
+
+    /** Prints deleted items. */
+    public void printLostItems() {
+        deletedItems.print();
+    }
+}
+```
+
+##### The Object Class
+
+Every class in Java is descendant of the Object class.
+
+As seen in [Documentation for the Obejct class](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html), the Obejct class provides operations that every Object should be able to do.
+
+### Encapsulation
+
+Encapsulation is one of the fundamental principles of object oriented programming, and is one of the approaches that we take as programmers to resist our biggest enemy: *complexity*.
+
+**Hiding information** that others don't need is another fundamental approach when managing a large system.
+
+##### How Inheritance Breaks Encapsulation
+
+E.g. We implement `bark` and `barkMany` in a Dog class:
+
+```java
+public void bark() {
+    barkMany(1);
+}
+
+public void barkMany(int N) {
+    for (int i = 0; i < N; i += 1) {
+        System.out.println("bark");
+    }
+}
+```
+
+And we define VerboseDog class and override `barkMany` method
+
+```java
+@Override
+public void barkMany(int N) {
+    System.out.println("As a dog, I say: ");
+    for (int i = 0; i < N; i += 1) {
+        bark();
+    }
+}
+```
+So, it will throw an error when we called `vd.barkMany(3);`. An infinite loop.
+
+### Type Checking and Casting
+
+Java complier checks the type at compile-time, checks their **static-type**, so it will throw an error below:
+
+```java
+VengefulSLList<Integer> vsl = new SLList<Integer>();
+```
+
+But sometimes we need the **dynamic-type**:
+
+```java
+Poodle frank = new Poodle("Frank", 5);
+Poodle frankJr = new Poodle("Frank Jr.", 15);
+
+Dog largerDog = maxDog(frank, frankJr);
+Poodle largerPoodle = maxDog(frank, frankJr); //does not compile! Right hand side has compile-time type Dog
+```
+
+##### Casting
+
+Java has a special syntax where you can tell the compiler that a specific expression has a specific compile-time type. This is called **casting**.
+
+Since we know `frank` and `frankJr` are both Poodles, we can cast:
+
+```java
+Poodle largerPoodle = (Poodle) maxDog(frank, frankJr); // compiles! Right hand side has compile-time type Poodle after casting
+```
+
+### Higher Order Functions
+
+A higher order function is a function that treats other functions as data. 
+
+```python
+def tenX(x):
+    return 10*x
+
+def do_twice(f, x):
+    return f(f(x))
+```
+
+In Java 7 and ealier, memory boxes (variables) could not contain pointers to functions, so we need interface inheritance to implient this.
+
+We need a class `IntUnaryFunction` to represent a concrete function:
+
+```java
+// IntUnaryFunction.java
+public interface IntUnaryFunction {
+    int apply(int x);
+}
+
+// TenX.java
+public class TenX implements IntUnaryFunction {
+    /* Returns ten times the argument. */
+    public int apply(int x) {
+        return 10 * x;
+    }
+}
+
+// HOF_demo.java
+public static int do_twice(IntUnaryFunction f, int x) {
+    return f.apply(f.apply(x));
+}
+
+System.out.println(do_twice(new TenX(), 2));
+```
+
