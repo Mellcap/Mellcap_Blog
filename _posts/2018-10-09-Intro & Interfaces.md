@@ -332,3 +332,143 @@ public static int do_twice(IntUnaryFunction f, int x) {
 System.out.println(do_twice(new TenX(), 2));
 ```
 
+
+
+# Subtype Polymorphism
+
+
+
+Polymorphism means 'many forms'.
+
+* Polymorphism: Providing a single interface to entities of different types.
+  * Example: A variable `deque` of static type `Deque`
+  * When you call `deque.addFirst()`, the actual behavior is based on the dynamic type(run-time type, maybe `ArrayDeque` `LinkedList Deque` and so forth).
+
+Suppose we want to write a python program that prints a string representation of the larger of two objects. There are two approaches to this.
+
+1. Explicit HoF Approach.
+
+```python
+def print_larger(x, y, compare, stringify):
+    if compare(x, y):
+        return stringify(x)
+    return stringify(y)
+```
+
+2. Subtype Polymorphism Approach.
+
+```python
+def print_larger(x, y):
+    if x.largerThan(y):
+        return x.str()
+    return y.str()
+```
+
+
+
+### A Generic Max Function
+
+Write a `max` function which takes in any array - regardless of type - and returns the maximum item in the array.
+
+Here is the psudo code:
+
+```java
+public static Object max(Object[] items) {
+    int maxDex = 0;
+    for (int i = 0; i < items.length; i += 1) {
+        if (items[i] > items[maxDex]) {
+            maxDex = i;
+        }
+    }
+    return items[maxDex];
+}
+
+public static void main(String[] args) {
+    Dog[] dogs = {new Dog("Elyse", 3), new Dog("Sture", 9), new Dog("Benjamin", 15)};
+    Dog maxDog = (Dog) max(dogs);
+    maxDog.bark();
+}
+```
+
+
+
+But there is a bug in it
+
+```java
+if (items[i] > items[maxDex]) {
+```
+
+The `>` operator can't works with  Object types.
+
+And if we write a `maxDog` function in Dog class can't match our expect, because we need to write `maxOctopus`, `maxCat` for other classes, resulting in a lot of redundant code.
+
+##### Solution
+
+We can write an interface called `OurComparable` which contains a method `compareTo`
+
+```java
+public interface OurComparable {
+    /**
+    Return -1 if this < o.
+	Return 0 if this equals o.
+	Return 1 if this > o.
+	*/
+    public int compareTo(Object o);
+}
+```
+
+And let Dog class implements the `compareTo` method:
+
+```java
+public class Dog implements OurComparable {
+	...
+    public int compareTo(Object o) {
+        Dog uddaDog = (Dog) o;
+        if (this.size < uddaDog.size) {
+            return -1;
+        } else if (this.size == uddaDog.size) {
+            return 0;
+        }
+        return 1;
+    }
+}
+
+🌟 There is a tricky, make the code above clear.
+public int compareTo(Object o) {
+	Dog uddaDog = (Dog) o;
+    return this.size - uddaDog.size;
+}
+```
+
+So the generic `max` function works for every Object that inherits OurComparable interface:
+
+```java
+public static OurComparable max(OurComparable[] items) {
+    int maxDex = 0;
+    for (int i = 0; i < items.length; i += 1) {
+        int cmp = items[i].compareTo(items[maxDex]);
+        if (cmp > 0) {
+            maxDex = i;
+        }
+    }
+    return items[maxDex];
+}
+```
+
+
+
+##### Comparables - Use the built-in library
+
+```java
+public interface Comparable<T> {
+    public int compareTo(T obj);
+}
+```
+
+The only difference is `Comparable<T>` supports generic type.
+
+And there are countless classes use this library. e.g. `Collection.max(dogs)`
+
+There is another library called **Comparator** which can compare other attributes.
+
+Note: Interfaces provide us with the ability to make **callback**: Sometimes, a function needs the help of another function that might not have been written yet (e.g. `max` needs `compareTo`)
